@@ -24,7 +24,7 @@ while True:
     # TODO: format LCD text according to threshhold
     top_line = f"{threshold} cm"
     
-    if distance < threshold
+    if distance < threshold:
       top_line += "OBJ PRES"
 
     bottom_line = f"{distance} cm"
