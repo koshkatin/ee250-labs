@@ -4,6 +4,7 @@ import time
 import grovepi
 from grove_rgb_lcd import *
 
+# LCD connected to port 
 # Grove Ultrasonic Ranger connectd to digital port 2
 ultrasonic_ranger = 2
 # potentiometer connected to analog port A0 as input
@@ -28,6 +29,11 @@ while True:
       top_line += "OBJ PRES"
 
     bottom_line = f"{distance} cm"
+
+    # Display text on LCD
+    setText_norefresh(f"{top_line}\n{bottom_line}")
+
+    time.sleep(0.5)  # Add delay to avoid excessive updates
     
   except IOError:
     print("Error")
