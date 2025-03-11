@@ -1,3 +1,6 @@
+# Tina Habibi
+# Faith Klein
+
 4.1. Suppose you just cloned a repository that included one python file,
 my_first_file.py, and you now want to add a second file to your repository named
 my_second_file.py which contains the following code and push it to

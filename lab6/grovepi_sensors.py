@@ -1,3 +1,6 @@
+# Tina Habibi
+# Faith Klein
+
 import sys
 sys.path.append('~/Dexter/GrovePi/Software/Python')
 import time
