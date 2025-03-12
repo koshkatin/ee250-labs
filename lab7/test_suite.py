@@ -23,7 +23,6 @@ mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 lux_treshold = 500  # change this value
 sound_treshold = 600 # change this value
 
-pin = 11 # ??
 light_sensor_channel = 0
 sound_sensor_channel = 1
 
@@ -32,9 +31,9 @@ while True:
 
   # 1. Blink the LED 5 times with on/off intervals of 500ms.
   for _ in range(5):
-    GPIO.output(pin, GPIO.HIGH)
+    GPIO.output(chan_list, GPIO.HIGH)
     time.sleep(0.5)
-    GPIO.output(pin, GPIO.LOW)
+    GPIO.output(chan_list, GPIO.LOW)
     time.sleep(0.5)
 
   # 2. Read and print light signal for 5 seconds
@@ -47,9 +46,9 @@ while True:
   
   # 3. Blink the LED 4 times with on/off intervals of 200ms
   for _ in range(4):
-    GPIO.output(pin, GPIO.HIGH)
+    GPIO.output(chan_list, GPIO.HIGH)
     time.sleep(0.2)
-    GPIO.output(pin, GPIO.LOW)
+    GPIO.output(chan_list, GPIO.LOW)
     time.sleep(0.2)
 
   # 4. Read and print sound signal, blink LED if mic tapped
@@ -58,9 +57,9 @@ while True:
     adc = mcp.read_adc(sound_sensor_channel) 
     print(adc)
     if adc > sound_treshold:
-        GPIO.output(pin, GPIO.HIGH)
+        GPIO.output(chan_list, GPIO.HIGH)
         time.sleep(0.1)
-        GPIO.output(pin, GPIO.LOW)
+        GPIO.output(chan_list, GPIO.LOW)
     
     time.sleep(0.1)  
 
